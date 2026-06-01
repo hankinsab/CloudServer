@@ -1,14 +1,12 @@
-
-FROM node:latest
+FROM node:22
 
 WORKDIR /app
 
 COPY package*.json ./
-
 RUN npm install
 
 COPY . .
 
 EXPOSE 8086
 
-CMD ["npm", "start"]
+CMD ["node", "index.js"]
